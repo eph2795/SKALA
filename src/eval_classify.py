@@ -160,9 +160,15 @@ def simple_predict(model_path, test_csv, img_dir, output_path='predictions.csv')
     
     return results_df
 
-# Использование
-results = simple_predict(
-    model_path='models/best_model_efficientnet_b0.pth',
-    test_csv='data/val_annotations.csv', #заменить на файл который я прислала
-    img_dir='data/dataset_classification_v3',
-)
+
+def main():
+    # Использование
+    results = simple_predict(
+        model_path='models/best_model_efficientnet_b0.pth',
+        test_csv='data/val_annotations.csv',
+        img_dir='data/dataset_classification_v3',
+    )
+
+
+if __name__ == "__main__":
+   main()

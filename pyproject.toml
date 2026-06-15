@@ -1,7 +1,7 @@
 [project]
 name = "SKALA"
 version = "0.1.0"
-description = "Add your description here"
+description = "A library for segmentation and classification of granules in microimages using deep learning."
 readme = "README.md"
 requires-python = ">=3.13"
 dependencies = [
