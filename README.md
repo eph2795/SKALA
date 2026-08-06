@@ -36,7 +36,11 @@
 ## Установка
 
 ```bash
-uv sync
+curl -LsSf https://astral.sh/uv/install.sh | sh # установка uv на случай, если он не установлен
+git clone https://github.com/eph2795/SKALA.git # клонирование репозитория
+cd SKALA # переход в директорию репозитория
+uv sync # установка всех зависимостей
+
 ```
 
 ## Структура проекта
