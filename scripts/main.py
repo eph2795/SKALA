@@ -2,6 +2,7 @@ from src.metrics import calc_masks
 from pathlib import Path
 import ujson as json
 
+
 def main():
     final, average = calc_masks()
     print(average)

@@ -37,8 +37,8 @@ def build_transform() -> transforms.Compose:
 def load_model(model_path: str | Path, device: torch.device) -> torch.nn.Module:
     """Загружает Mask R-CNN один раз и переносит его на доступное устройство."""
     model = create_model("mask_rcnn")
-    pretrain = torch.load(model_path, map_location='cpu', weights_only=False)
-    model.load_state_dict(pretrain['model_state_dict'])
+    pretrain = torch.load(model_path, map_location="cpu", weights_only=False)
+    model.load_state_dict(pretrain["model_state_dict"])
     model.to(device)
     model.eval()
     return model
