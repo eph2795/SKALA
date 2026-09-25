@@ -7,6 +7,9 @@ wheels/
 *.egg-info
 *.idea
 
+# Raw data
+results/synthetic_dataset/*
+
 # Virtual environments
 .venv
 uv.lock
