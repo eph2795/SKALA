@@ -7,3 +7,5 @@ use1:
 	uv run -m use_scripts.batch_analysis_report
 use2:
 	uv run -m use_scripts.classify_and_plot
+use3:
+	uv run -m use_scripts.cpu_inference
