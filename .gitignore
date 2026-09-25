@@ -6,6 +6,8 @@ dist/
 wheels/
 *.egg-info
 *.idea
+*cache*
+*ruff*
 
 # Raw data
 results/synthetic_dataset/*

@@ -1096,3 +1096,4 @@ data/classification_test filter=lfs diff=lfs merge=lfs -text
 data/clf_labels.csv filter=lfs diff=lfs merge=lfs -text
 data/clf_test_labels.csv filter=lfs diff=lfs merge=lfs -text
 data/segmentation_100 filter=lfs diff=lfs merge=lfs -text
+data/classification_10k.zip filter=lfs diff=lfs merge=lfs -text
