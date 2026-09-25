@@ -11,16 +11,15 @@ curl -LsSf https://astral.sh/uv/install.sh | sh # установка uv на с�
 git clone https://github.com/eph2795/SKALA.git # клонирование репозитория
 cd SKALA # переход в директорию репозитория
 uv sync # установка всех зависимостей
-
+git lfs pull                  # загрузка LFS-данных (data/, models/), если не скачаны при клонировании
 ```
 
-## Подготовка
-
-Все команды выполняются из корня репозитория:
+## Проверка
 
 ```bash
-uv sync                       # установка зависимостей в .venv
-git lfs pull                  # загрузка LFS-данных (data/, models/), если не скачаны при клонировании
+make checksum-verify # проверка, что все файлы моделей и данные скачаны верно
+#or 
+uv run -m scripts.check_checksums verify
 ```
 
 Скрипты обращаются к относительным путям (`data/`, `models/`, `results/`),

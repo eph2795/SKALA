@@ -11,3 +11,7 @@ use3:
 	uv run -m use_scripts.cpu_inference
 use4: 
 	uv run -m use_scripts.synthetic_data_gen
+checksum-gen:
+	uv run -m scripts.check_checksums generate
+checksum-verify:
+	uv run -m scripts.check_checksums verify
