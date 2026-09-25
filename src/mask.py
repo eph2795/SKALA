@@ -28,7 +28,6 @@ def get_one_mask(image_1_path, image_2_path, image_3_path, mask_path, model_path
     # img_tensor = transform(your_image).float().unsqueeze(0)
     # model_path = '/Users/masha/Desktop/freeze_final_model_x_noise_gt_instance_checkpoint_epoch_10.pth'
     device = torch.device("cuda")
-    cpu = torch.device("cpu")
     model_name = "mask_rcnn"
     model = create_model(model_name)
     pretreain = torch.load(model_path, map_location="cpu")
