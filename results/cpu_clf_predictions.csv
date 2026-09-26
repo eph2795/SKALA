@@ -1,0 +1,11 @@
+image_path,true_label,predicted_label
+img_1__slices_D__365__uint8__500x500__rock=0%__feldspars=0%__cls=01.raw,1,1
+img_2__slices_W__280__uint8__500x500__rock=18%__feldspars=4%__cls=02.raw,2,2
+img_1__slices_H__485__uint8__500x500__rock=3%__feldspars=11%__cls=03.raw,3,3
+img_2__slices_H__330__uint8__500x500__rock=24%__feldspars=16%__cls=04.raw,4,8
+img_1__slices_W__230__uint8__500x500__rock=7%__feldspars=29%__cls=05.raw,5,5
+img_1__slices_W__250__uint8__500x500__rock=21%__feldspars=29%__cls=06.raw,6,6
+img_1__slices_W__55__uint8__500x500__rock=54%__feldspars=8%__cls=07.raw,7,7
+img_2__slices_D__410__uint8__500x500__rock=32%__feldspars=33%__cls=08.raw,8,8
+img_2__slices_H__245__uint8__500x500__rock=81%__feldspars=4%__cls=09.raw,9,9
+img_2__slices_D__280__uint8__500x500__rock=27%__feldspars=46%__cls=10.raw,10,6
