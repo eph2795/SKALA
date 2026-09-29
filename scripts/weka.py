@@ -12,7 +12,7 @@ from src.mask import _read_raw_mask, convert_to_binary_mask
 
 
 def calc_weka_masks(
-    folder: Path = Path("data/img_1__slices_D"),
+    folder: Path = Path("data/segmentation_100"),
 ):
     final_metrics = defaultdict(list)
     keys: list[str] = [

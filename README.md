@@ -40,7 +40,15 @@ curl -LsSf https://astral.sh/uv/install.sh | sh # установка uv на с�
 git clone https://github.com/eph2795/SKALA.git # клонирование репозитория
 cd SKALA # переход в директорию репозитория
 uv sync # установка всех зависимостей
+git lfs pull                  # загрузка LFS-данных (data/, models/), если не скачаны при клонировании
+```
 
+## Проверка
+
+```bash
+make checksum-verify # проверка, что все файлы моделей и данные скачаны верно
+#or 
+uv run -m scripts.check_checksums verify
 ```
 
 ## Структура проекта
@@ -66,8 +74,8 @@ from pathlib import Path
 
 # Расчет метрик сегментации
 final_metrics, averaged_metrics = calc_masks(
-    folder=Path("data/slices"),
-    model_path="models/model.pth"
+    folder=Path("data/segmentation_100"),
+    model_path="models/freeze_final_model_x_noise_gt_instance_checkpoint_epoch_10.pth"
 )
 
 print(averaged_metrics)
@@ -77,14 +85,14 @@ print(averaged_metrics)
 ### Классификация
 
 ```python
-from eval_classify import simple_predict
+from src.eval_classify import simple_predict
 
 # Предсказание классов
 results = simple_predict(
-    model_path='model.pth',
-    test_csv='annotations.csv',
-    img_dir='/path/to/masks/',
-    output_path='predictions.csv'
+    model_path='models/best_model_efficientnet_b0.pth',
+    test_csv='data/clf_test_labels.csv',
+    img_dir='data/classification_test',
+    output_path='results/clf_predictions.csv'
 )
 ```
 
@@ -124,7 +132,7 @@ results = simple_predict(
 from src.create_model import create_model
 
 model = create_model("mask_rcnn")
-model.load_state_dict(torch.load("model.pth")["model_state_dict"])
+model.load_state_dict(torch.load("models/freeze_final_model_x_noise_gt_instance_checkpoint_epoch_10.pth")["model_state_dict"])
 model.eval()
 ```
 
@@ -133,11 +141,11 @@ model.eval()
 from src.mask import get_one_mask
 
 masks = get_one_mask(
-    image_1_path="image_x.png",
-    image_2_path="image_xy.png", 
-    image_3_path="image_y.png",
-    mask_path="mask.raw",
-    model_path="model.pth"
+    image_1_path="data/segmentation_test/110/thin_110_x__500x500.png",
+    image_2_path="data/segmentation_test/110/thin_110_xy__500x500.png",
+    image_3_path="data/segmentation_test/110/thin_110_y__500x500.png",
+    mask_path="data/segmentation_test/110/grains_110__uint32__500x500.raw",
+    model_path="models/freeze_final_model_x_noise_gt_instance_checkpoint_epoch_10.pth"
 )
 ```
 

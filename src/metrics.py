@@ -8,7 +8,7 @@ import matplotlib.pyplot as plt
 
 
 def calc_masks(
-    folder: Path = Path("data/img_1__slices_D"),
+    folder: Path = Path("data/segmentation_100"),
     model_path: str = "models/freeze_final_model_x_noise_gt_instance_checkpoint_epoch_10.pth",
 ):
     final_metrics = defaultdict(list)
