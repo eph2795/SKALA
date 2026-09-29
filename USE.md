@@ -7,11 +7,15 @@
 ## Установка
 
 ```bash
-curl -LsSf https://astral.sh/uv/install.sh | sh # установка uv на случай, если он не установлен
+sudo apt update -y 
+sudo apt install git-lfs # установка git lfs
+sudo apt install make # установка make
+curl -LsSf https://astral.sh/uv/install.sh | sh # установка uv
 git clone https://github.com/eph2795/SKALA.git # клонирование репозитория
 cd SKALA # переход в директорию репозитория
+git lfs install # активация git lfs
+git lfs pull # загрузка LFS-данных (data/, models/), если не скачаны при клонировании
 uv sync # установка всех зависимостей
-git lfs pull                  # загрузка LFS-данных (data/, models/), если не скачаны при клонировании
 ```
 
 ## Проверка
